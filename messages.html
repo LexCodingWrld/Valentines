@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Messages</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  </head>
+  <style>
+ body { font-family: Georgia, serif, cursive; margin:0 }
+      .box { width:90%; max-width:720px; padding:28px; box-sizing:border-box }
+      textarea { width:100%; height:400px; padding:12px; font-size:16px; line-height:1.8; font-family: Georgia, serif; font-weight: 400; border-radius:8px; border:1px solid #e6a6a6; display:none }
+      textarea.show { display:block }
+      .controls { margin-top:8px; display:flex; gap:8px; justify-content:center }
+      .btn { padding:8px 12px; border-radius:6px; border:none; cursor:pointer; text-decoration:none }
+      h2 { font:bold 'Great Vibes', cursive; font-size: 32px; color: #030303; font-weight: 400; }
+      .btn-primary { background:#f08080; color:#fff; font-weight:700; box-shadow:0 6px 14px rgba(240,128,128,0.24); text-decoration:none }
+      .btn-link { background:transparent; color:#f08080; border:1px solid #f08080; text-decoration:none; display:inline-flex; align-items:center }
+      #revealBtn { padding:2px; font-size:48px; background:white; border:2px solid #e9e5e5; border-radius:10px; box-shadow:0 4px 12px rgba(240,128,128,0.3); transition:all 0.3s ease }
+      .signature { font-family: 'Great Vibes', cursive; font-size: 24px; color: #d62828; margin-top: 16px; font-weight: 400; }
+  </style>
+  <body>
+
+    <div class="box">
+      <br>
+      <br>
+      <br>
+      <h2>Happy Valentine's Day Baby❤️</h2>
+      <audio id="seasonsAudio" controls preload="none" style="width:100%;margin-bottom:12px">
+        <source src="wave to earth - seasons (Lyrics).mp3" type="audio/mpeg">
+      </audio>
+      <div style="text-align:center;margin-bottom:12px">
+        <button id="revealBtn" class="btn">💌</button>
+      </div>
+      <textarea id="msg" placeholder="Type your message here...">To the girl I love the most.
+
+Wow, there's so much to say, but let me try...
+
+        Have I ever mentioned how your smile has this incredible power to brighten even my darkest moments? It's like a ray of sunshine breaking through the clouds. And your eyes, they twinkle like the stars in the night sky, creating a mesmerizing constellation of beauty.
+
+        Your laughter is like a symphony that brings harmony to my thoughts, drowning out all the noise of worries and doubts. Your voice, it's line a soothing balm that calms the storms within me.
+
+        When I look into your eyes. I see a future that we're building together. It's like a canvas filled with dreams and endless possibilities, and it's a future I want with no one but you.
+
+        You're not just a want, you're a need in my life. You're like the missing piece that completes the puzzle of my existence. Without you, everything feels a little less vibrant, a little less alive. You're the spark that ignites my days and the warmth that keeps me going.
+
+        You bring me a kind of happiness that's beyond words, beyond measure. So, I'm offering you something equally precious — my heart, my soul, my very life.
+        
+        I love you. Baby, I love you so much.
+          
+Your Boyfie:
+Maddie the pogi😎
+    </textarea>
+      <div class="controls">
+        <a href="index.html" class="btn btn-primary">Back</a>
+      </div>
+    </div>
+    <script> 
+      (function(){
+        const audio = document.getElementById('seasonsAudio');
+        if (!audio) return;
+        const startOnInteraction = () => {
+          audio.play().catch(()=>{});
+          document.removeEventListener('click', startOnInteraction);
+        };
+        document.addEventListener('click', startOnInteraction, { once: true });
+      })();
+      
+      document.getElementById('revealBtn').addEventListener('click', function(){
+        const textarea = document.getElementById('msg');
+        textarea.classList.toggle('show');
+      });
+    </script>
+    
+  </body>
+</html>
